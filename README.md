@@ -14,6 +14,7 @@ method/
   train.py           # train convNetLeonArDBO on 1D / 2D / 3D grids
   models.py          # network definitions (y encoder, prior conv encoder, convNetLeonArDBO)
   utils.py           # dataset class and helpers
+  gp_model.py        # GPyTorch / BoTorch GP used to generate data
   image.png          # architecture figure
 mismatch_in_the_wild/
   corners.py         # prior-mismatch analysis on real-world benchmark datasets (e.g. AgNP)
@@ -38,6 +39,10 @@ mismatch_in_the_wild/
 ## Dependencies
 
 `torch`, `gpytorch`, `botorch`, `numpy`, `pandas`, `scikit-learn`, `matplotlib`, and optionally `comet_ml`.
+
+4D grids also need an external `conv4d` module that provides `Conv4d` and `BatchNorm4d`. It is not included here, and 1D–3D runs don't need it.
+
+`mismatch_in_the_wild/corners.py` imports `gp_model` from `method/`, so put `method/` on your `PYTHONPATH` before running it.
 
 ## Citation
 

@@ -2,7 +2,10 @@ import torch
 import matplotlib.pyplot as plt
 import torch.nn as nn
 
-import conv4d as nn4  # only needed for dim == 4 in priorConvEncoder
+try:
+    import conv4d as nn4  # optional, external; only needed for dim == 4 in priorConvEncoder
+except ImportError:
+    nn4 = None
 
 
 class yEncoder(nn.Module):
