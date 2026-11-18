@@ -2,7 +2,7 @@
 
 Code for the paper **"LeonArDBO: Fast and Prior-Driven Bayesian Optimization without Surrogate Modeling"** ([OpenReview](https://openreview.net/forum?id=lSuYUCtIcj)).
 
-LeonArDBO skips the surrogate model. A neural network learns to update a belief over the optimizer's location, $\pi_t(\mathbf{x}^*)$, directly. At each step the network takes the new observation $y$, the gap to the incumbent $y - y_t^*$, and the current belief $\pi_t(\mathbf{x}^*)$. It outputs a learned likelihood $\hat{\mathcal{L}}(\mathbf{x}^*)[\mathbf{x}, y]$, which is multiplied with the prior to give the updated belief $p_t(\mathbf{x}^*)$.
+LeonArDBO skips the surrogate model. A neural network learns to update a belief over the optimizer's location, $`\pi_t(\mathbf{x}^*)`$, directly. At each step the network takes the new observation $`y`$, the gap to the incumbent $`y - y_t^*`$, and the current belief $`\pi_t(\mathbf{x}^*)`$. It outputs a learned likelihood $`\hat{\mathcal{L}}(\mathbf{x}^*)[\mathbf{x}, y]`$, which is multiplied with the prior to give the updated belief $`p_t(\mathbf{x}^*)`$.
 
 <p align="center"><img src="method/image.png" width="550" alt="LeonArDBO architecture"></p>
 
